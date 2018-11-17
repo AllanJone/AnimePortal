@@ -67,13 +67,17 @@ namespace AnimePortal.Controllers
 
         public List<Anime> MapAnimesFromJSON(string jsonObj)
         {
+            int id = 0;
+            string name = "";
             string imageUrl = "";
             List<Anime> animeList = new List<Anime>();
             JObject jObject = JObject.Parse(jsonObj);
             for (int i = 0; i < 10; i++)
             {
+                id = (int)jObject["data"][i]["id"];
+                name = (string)jObject["data"][i]["attributes"]["titles"]["en_jp"];
                 imageUrl = (string)jObject["data"][i]["attributes"]["posterImage"]["medium"];
-                animeList.Add(new Anime() { name = imageUrl });
+                animeList.Add(new Anime() { id = id, name = name, imageUrl = imageUrl });
             }
             return animeList;
         }

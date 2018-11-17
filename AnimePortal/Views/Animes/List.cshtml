@@ -7,10 +7,50 @@
     var list = ((List<Anime>)ViewData["AnimeModel"]);
 }
 
+@*<h2>AnimeList</h2>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>IMAGE</td>
+        </tr>
+        @{
+            foreach (var temp in list)
+            {
+                <tr>
+                    <td>@temp.id</td>
+                    <td>@temp.name</td>
+                    <td><img src="@temp.imageUrl" alt="Alternate Text" /></td>
+                </tr>
+            }
+        }
+    </table>
+*@
+
 <h2>AnimeList</h2>
 @{
     foreach (var temp in list)
     {
-        <img src="@temp.name" alt="Alternate Text" />
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(temp1 => temp.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(temp1 => temp.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(temp1 => temp.imageUrl)
+                </dt>
+
+                <dd>
+                    <img src="@Html.DisplayFor(temp1 => temp.imageUrl)" alt="@Html.DisplayFor(temp1 => temp.name) Image" />
+                </dd>
+
+            </dl>
+        </div>
     }
 }
+
