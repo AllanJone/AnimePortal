@@ -177,7 +177,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Animes\List.cshtml" />
-    <Content Include="Views\Animes\AnimeList.cshtml" />
+    <Content Include="Views\Animes\Index.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="APIDTOs\" />

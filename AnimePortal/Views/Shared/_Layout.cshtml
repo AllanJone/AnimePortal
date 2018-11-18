@@ -6,28 +6,30 @@
     <title>@ViewBag.Title - Anime World</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        body {
+            background: #060606 !important;
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #888;
+            color: #fff;
+        }
+
+        .navbar-inverse {
+            background: #2a9fd6 !important;
+        }
+            .navbar-inverse .navbar-brand{
+                color:white !important;
+            }
+
+            .navbar-inverse .navbar-nav > li > a {
+                color:#95cfeb !important;
+            }
+
+        /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Anime World", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Anime List", "List", "Animes")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    @Html.Partial("_NavBar")
     <div class="container body-content">
         @RenderBody()
         <hr />

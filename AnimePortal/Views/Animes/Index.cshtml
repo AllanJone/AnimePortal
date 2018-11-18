@@ -1,0 +1,41 @@
+﻿@using AnimePortal.Models
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var temp = ((Anime)ViewData["AnimeModel"]);
+}
+
+@{
+    ViewBag.Title = temp.name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@temp.name</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            NAME
+        </dt>
+
+        <dd>
+            @temp.name
+        </dd>
+
+        <dt>
+            IMAGE
+        </dt>
+
+        <dd>
+            <img src="@temp.imageUrl" alt="Alternate Text" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")*@
+</p>
